@@ -8,7 +8,7 @@
 / Function Configurations
 /---------------------------------------------------------------------------*/
 
-#define FF_FS_READONLY	0	/* Fauxdem: writes FAUXDEM.CFG to a card that has none */
+#define FF_FS_READONLY	0
 /* This option switches read-only configuration. (0:Read/Write or 1:Read-only)
 /  Read-only configuration removes writing API functions, f_write(), f_sync(),
 /  f_unlink(), f_mkdir(), f_chmod(), f_rename(), f_truncate(), f_getfree()
@@ -56,7 +56,7 @@
 /* This option switches f_forward(). (0:Disable or 1:Enable) */
 
 
-#define FF_USE_STRFUNC	1	/* Fauxdem: f_gets/f_puts for FAUXDEM.CFG */
+#define FF_USE_STRFUNC	0
 #define FF_PRINT_LLI	0
 #define FF_PRINT_FLOAT	0
 #define FF_STRF_ENCODE	0
@@ -84,7 +84,7 @@
 / Locale and Namespace Configurations
 /---------------------------------------------------------------------------*/
 
-#define FF_CODE_PAGE	437	/* Fauxdem */
+#define FF_CODE_PAGE	932
 /* This option specifies the OEM code page to be used on the target system.
 /  Incorrect code page setting can cause a file open failure.
 /
@@ -113,7 +113,7 @@
 */
 
 
-#define FF_USE_LFN		1	/* Fauxdem: long names, needed for exFAT */
+#define FF_USE_LFN		0
 #define FF_MAX_LFN		255
 /* The FF_USE_LFN switches the support for LFN (long file name).
 /
@@ -215,7 +215,7 @@
 /  GET_SECTOR_SIZE command. */
 
 
-#define FF_LBA64		1	/* Fauxdem: GPT-partitioned cards */
+#define FF_LBA64		0
 /* This option switches support for 64-bit LBA. (0:Disable or 1:Enable)
 /  To enable the 64-bit LBA, also exFAT needs to be enabled. (FF_FS_EXFAT == 1) */
 
@@ -243,16 +243,16 @@
 /  buffer in the filesystem object (FATFS) is used for the file data transfer. */
 
 
-#define FF_FS_EXFAT		1	/* Fauxdem: cards over 32 GB come as exFAT */
+#define FF_FS_EXFAT		0
 /* This option switches support for exFAT filesystem. (0:Disable or 1:Enable)
 /  To enable exFAT, also LFN needs to be enabled. (FF_USE_LFN >= 1)
 /  Note that enabling exFAT discards ANSI C (C89) compatibility. */
 
 
-#define FF_FS_NORTC		1	/* Fauxdem: no RTC */
+#define FF_FS_NORTC		0
 #define FF_NORTC_MON	1
 #define FF_NORTC_MDAY	1
-#define FF_NORTC_YEAR	2026
+#define FF_NORTC_YEAR	2025
 /* The option FF_FS_NORTC switches timestamp feature. If the system does not have
 /  an RTC or valid timestamp is not needed, set FF_FS_NORTC = 1 to disable the
 /  timestamp feature. Every object modified by FatFs will have a fixed timestamp
